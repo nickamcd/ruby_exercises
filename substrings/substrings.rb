@@ -2,8 +2,10 @@ def substrings (string, dictionary)
     string_arr = string.split
 
     string_arr.reduce(Hash.new(0)) do |result, word|
-        if dictionary.include?(word)
-             result[word] += 1
+        dictionary.each do |reference_word|
+            if word.downcase.include?(reference_word)
+                result[reference_word] += 1
+            end
         end
     result
     end
