@@ -6,9 +6,11 @@ def stock_picker(price_arr)
 
     # iterate over the upcoming days to compare to current day
     price_arr[next_day..-1].each_with_index do |sell_price, new_index|
-        sell_index = new_index + next_day
-        if (sell_price - buy_price) > (price_arr[best_days[1]] - price_arbest_days = [buy_index, sell_index]
-        end
+      sell_index = new_index + next_day
+      if (sell_price - buy_price) > (price_arr[best_days[1]] - price_arr[best_days[0]])
+        best_days[1] = sell_index
+        best_days[0] = buy_index
+      end
     end
   end
 
