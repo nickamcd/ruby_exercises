@@ -1,20 +1,22 @@
+# frozen_string_literal: true
+
 def bubble_sort(array)
-    return array if array.length <= 1
+  return array if array.length <= 1
 
-    loop do
-        swapped = false # flag to check if value is swapped
+  loop do
+    swapped = false # flag to check if value is swapped
 
-        (array.length - 1).times do |i|
-            if array[i] > array[i + 1]
-                array[i], array[i + 1] = array[i + 1], array[i]
-                swapped = true
-            end
-        end
-
-        break if not swapped
+    (array.length - 1).times do |i|
+      if array[i] > array[i + 1]
+        array[i], array[i + 1] = array[i + 1], array[i]
+        swapped = true
+      end
     end
 
-    array
+    break unless swapped
+  end
+
+  array
 end
 
 array_to_sort = [4, 3, 78, 2, 0, 2]

@@ -1,4 +1,6 @@
-def stock_picker(price_arr) 
+# frozen_string_literal: true
+
+def stock_picker(price_arr)
   best_days = [0, 0]
 
   price_arr.each_with_index do |buy_price, buy_index|
@@ -17,4 +19,4 @@ def stock_picker(price_arr)
   best_days
 end
 
-p stock_picker([17,3,6,9,15,8,6,1,10])
+p stock_picker([17, 3, 6, 9, 15, 8, 6, 1, 10])
